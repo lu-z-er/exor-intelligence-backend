@@ -1,4 +1,5 @@
 from newsplease import NewsPlease
+from operators.exor_errors import FetchArticleError
 import json 
 
 def taskmaster(url, cla_callable, insert_callable):
@@ -26,6 +27,6 @@ def taskmaster(url, cla_callable, insert_callable):
                 }
             return exor_format
         else:
-            raise NotImplementedError("Unable to fetch the Article!!")
+            raise FetchArticleError("Unable to fetch the Article!!")
     except Exception:
         raise
